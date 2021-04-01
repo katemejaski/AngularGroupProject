@@ -1,0 +1,23 @@
+<h2>Group 3 Travel Day Dreamin'</h2>
+
+<ul class="trips">
+    <li *ngFor="let trip of trips" (click)="onSelect(trip)">
+        <span class="badge">{{trip.id}}</span>
+        {{trip.name}} | 
+        <i>{{trip.location}}</i>
+    </li>
+</ul>
+
+<div class="container">
+<div *ngIf="selectedTrip">
+
+    <h2>{{selectedTrip.name}}'s Dream Trip</h2>
+    <br>
+    <div><img alt="Trip Image" class="tripImage" src={{selectedTrip.image}}>
+    <div><span>Location: </span>{{selectedTrip.location}}</div>
+    <div><span>Description: </span>{{selectedTrip.description}}</div>
+   
+      </div>
+  </div>
+  
+</div>
